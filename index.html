@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Mis Series y Películas</title>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Mis Series y Películas</h1>
+        <div class="filter">
+            <input type="text" id="search-bar" placeholder="Buscar...">
+            <select id="rating-filter">
+                <option value="all">Filtrar por puntuación</option>
+                <option value="1">1 Estrella</option>
+                <option value="2">2 Estrellas</option>
+                <option value="3">3 Estrellas</option>
+                <option value="4">4 Estrellas</option>
+                <option value="5">5 Estrellas</option>
+            </select>
+            <button id="search-btn">Buscar</button>
+        </div>
+        <button id="mode-toggle" class="mode-icon"><i class="fas fa-moon"></i></button>
+    </nav>
+    
+    <div id="loading" class="loading hidden">Cargando...</div>
+    <div id="movies-list" class="movies-list"></div>
+    <script src="app.js"></script>
+</body>
+</html>

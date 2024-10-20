@@ -1,0 +1,175 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.dark-mode {
+    background-color: #222;
+    color: #f4f4f4;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #444;
+    padding: 1rem;
+    color: white;
+    position: relative;
+}
+
+.navbar h1 {
+    font-size: 1.8em; /* Tamaño del título */
+    margin: 0;
+}
+
+.filter {
+    display: flex;
+    gap: 10px;
+    align-items: center; /* Alinear verticalmente */
+}
+
+.filter input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    width: 200px; /* Ancho del campo de búsqueda */
+}
+
+.filter button {
+    background-color: #f39c12; /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter button:hover {
+    background-color: #e67e22; /* Color al pasar el mouse */
+}
+
+.filter select {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+}
+
+.movies-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+}
+
+/* Definición de la animación shake */
+@keyframes shake {
+    0% { transform: translate(1px, 0); }
+    25% { transform: translate(-1px, 0); }
+    50% { transform: translate(1px, 0); }
+    75% { transform: translate(-1px, 0); }
+    100% { transform: translate(0, 0); }
+}
+
+.movie-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    width: calc(17% - 100px); /* Reduce el ancho del contenedor */
+    transition: transform 0.3s, box-shadow 0.3s; /* Añadir transición para suavizar la animación */
+    display: flex;
+    flex-direction: column; /* Alineación vertical */
+    align-items: center; /* Centrar contenido */
+    height: auto; /* Altura automática para adaptarse al contenido */
+}
+
+.movie-item:hover {
+    animation: shake 0.9s; /* Añadir la animación shake al pasar el mouse */
+    transform: scale(2.05); /* Aumentar ligeramente el tamaño al pasar el mouse */
+    box-shadow: 0 6px 17px rgba(175, 17, 17, 0.9); /* Aumentar la sombra para resaltar */
+}
+
+
+
+
+.movie-item img {
+    height: 250px; /* Altura fija reducida para las imágenes */
+    object-fit: cover; /* Mantener proporciones y recortar automáticamente */
+    width: auto; /* Mantener el ancho automático para evitar que se deformen */
+    max-width: 100%; /* Asegurarse de que la imagen no exceda el ancho del contenedor */
+    border-radius: 8px;
+}
+
+.movie-item h2 {
+    font-size: 1.2em; /* Ajuste del tamaño de la fuente del título */
+    margin: 10px 0; /* Espaciado vertical */
+    text-align: center; /* Centrar el texto */
+}
+
+
+.movie-item p {
+    font-size: 0.9em; /* Ajuste del tamaño de la fuente de la descripción */
+    text-align: center; /* Centrar el texto */
+    margin: 5px 0; /* Espaciado vertical */
+}
+
+.dark-mode .movie-item {
+    background: #333; /* Color de fondo para el modo oscuro */
+    color: #f4f4f4; /* Color del texto en modo oscuro */
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.rating i {
+    color: gold;
+    margin: 0 2px;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.mode-icon {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 2.0rem;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+}
+
+/* Color del icono en modo claro */
+.mode-icon i {
+    color: #333; /* Cambia este color al que desees para el modo claro */
+}
+
+/* Color del icono en modo oscuro */
+.dark-mode .mode-icon i {
+    color: #f4f4f4; /* Cambia este color al que desees para el modo oscuro */
+}
+
+.mode-icon:hover {
+    opacity: 0.8; /* Efecto al pasar el mouse */
+}
